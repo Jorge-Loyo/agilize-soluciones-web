@@ -1,0 +1,23 @@
+body {
+    background-color: #121212; /* Un negro elegante */
+    color: #FFFFFF; /* Texto blanco */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #D4AF37; /* Tono dorado */
+    font-size: 3em;
+    border-bottom: 2px solid #D4AF37;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #CCCCCC; /* Un gris claro para el texto secundario */
+}
