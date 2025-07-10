@@ -3,7 +3,7 @@ name: Desplegar Sitio en Google Cloud
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
