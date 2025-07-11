@@ -540,3 +540,119 @@ footer {
 .boton-herramienta:hover {
     background-color: #c49d2b;
 }
+
+
+/* ============================================= */
+/* --- ESTILOS RESPONSIVE (PARA MÓVILES) --- */
+/* ============================================= */
+
+/* Estilos para el botón de hamburguesa */
+.hamburger {
+    display: none; /* Oculto por defecto en escritorio */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Para que esté por encima de la cabecera */
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animación para la hamburguesa cuando está activa (X) */
+.hamburger.is-active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.is-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.is-active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Media Query principal para tablets y móviles (hasta 768px) */
+@media (max-width: 768px) {
+    
+    /* Ocultamos la navegación de escritorio y mostramos la hamburguesa */
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #121212;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Cuando el menú móvil está abierto, lo mostramos */
+    .main-nav.mobile-open {
+        display: flex;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Apilamos los enlaces verticalmente */
+        text-align: center;
+    }
+
+    .main-nav ul li {
+        margin: 20px 0; /* Más espacio entre los enlaces */
+    }
+
+    .main-nav ul li a {
+        font-size: 1.5em; /* Letra más grande para el menú móvil */
+    }
+
+    .hamburger {
+        display: block; /* Mostramos el botón de hamburguesa */
+    }
+
+    /* Ajustes generales de espaciado y tipografía */
+    .hero {
+        height: 70vh;
+    }
+
+    h1, .pagina-interna h1 {
+        font-size: 2.5em;
+    }
+
+    h2, .servicios h2, .portfolio h2, .quienes-somos .texto h2, .pagina-interna h2 {
+        font-size: 2em;
+    }
+
+    .servicios, .quienes-somos, .portfolio, .pagina-interna {
+        padding: 60px 20px;
+    }
+
+    /* Heredamos los ajustes que ya tenías para las columnas */
+    .quienes-somos-contenido, .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* ============================================= */
+/* --- ESTILOS PARA ANIMACIONES AL SCROLL --- */
+/* ============================================= */
+
+/* Estado inicial de las secciones que se animarán */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px); /* Empieza 30px más abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Clase que se añade con JavaScript cuando la sección es visible */
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+}

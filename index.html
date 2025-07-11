@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agilize Soluciones</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
 
@@ -22,14 +22,20 @@
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="herramientas.html">Herramientas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                
             </ul>
         </nav>
+        <button class="hamburger" id="hamburger-button" aria-label="Abrir menú">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </div>
 </header>
 
-    <section class="servicios">
+    <section class="servicios fade-in-section">
         <h2>Lo que Ofrecemos</h2>
         <div class="servicios-grid">
             <div class="servicio-card">
@@ -51,7 +57,7 @@
         </div>
     </section>
 
-    <section class="quienes-somos">
+    <section class="quienes-somos fade-in-section">
         <div class="quienes-somos-contenido">
             <div class="texto">
                 <h2>Nuestra Misión es Tu Éxito</h2>
@@ -63,7 +69,7 @@
             </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio fade-in-section">
     <h2>Nuestras Creaciones</h2>
     <div class="portfolio-grid">
 
@@ -131,6 +137,7 @@
         <p>Todos los derechos reservados &copy; 2025 Agilize Soluciones</p>
     </div>
 </footer>
+    <script src="js/script.js"></script> 
 
 </body>
 </html>

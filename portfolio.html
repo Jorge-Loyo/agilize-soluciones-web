@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Agilize Soluciones</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <header class="main-header">
     <div class="header-container">
-        <div class="header-container">
         <div class="logo">
     <a href="index.html">
         <img src="images/logo.jpeg" alt="Logo de Agilize Soluciones">
     </a>
 </div>
+        
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="herramientas.html">Herramientas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                
             </ul>
         </nav>
+        <button class="hamburger" id="hamburger-button" aria-label="Abrir menú">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </div>
 </header>
 
-    <main class="pagina-interna">
+    <main class="pagina-interna fade-in-section">
         <h1>Nuestro Trabajo</h1>
         <p class="intro-servicios">Cada proyecto es una colaboración y una oportunidad para crear algo único. Aquí tienes una selección de algunos de nuestros trabajos más recientes que demuestran nuestra capacidad para transformar ideas en realidad.</p>
         
@@ -122,6 +128,6 @@
         <p>Todos los derechos reservados &copy; 2025 Agilize Soluciones</p>
     </div>
 </footer>
-
+<script src="js/script.js"></script> 
 </body>
 </html>

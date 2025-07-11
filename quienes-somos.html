@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agilize Soluciones</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="main-header">
+    <link rel="stylesheet" href="static/style.css">
+<header class="main-header">
     <div class="header-container">
-        <div class="header-container">
         <div class="logo">
     <a href="index.html">
         <img src="images/logo.jpeg" alt="Logo de Agilize Soluciones">
     </a>
 </div>
+        
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="herramientas.html">Herramientas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                
             </ul>
         </nav>
+        <button class="hamburger" id="hamburger-button" aria-label="Abrir menú">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </div>
 </header>
 
 
-    <section class="quienes-somos">
+    <section class="quienes-somos fade-in-section">
         <div class="quienes-somos-contenido">
             <div class="texto">
                 <h2>Nuestra Misión es Tu Éxito</h2>
@@ -43,7 +47,7 @@
     </section>
 
 
-    <main class="pagina-interna">
+    <main class="pagina-interna fade-in-section">
     <h1>Nuestra Historia</h1>
     <p><strong>Agilize Soluciones</strong> nació en 2023 con una visión clara: cerrar la brecha entre las ideas de negocio y la ejecución tecnológica. Durante años, vimos a muchos emprendedores y empresas con proyectos brillantes que luchaban por encontrar un socio tecnológico que no solo programara, sino que entendiera sus metas y hablara su mismo idioma.</p>
     <p>Nuestro equipo está formado por diseñadores, desarrolladores y estrategas de marketing apasionados por la innovación y obsesionados con la calidad. Creemos en el código limpio, el diseño centrado en el usuario y, sobre todo, en las relaciones a largo plazo basadas en la confianza y la transparencia.</p>
@@ -90,6 +94,6 @@
         <p>Todos los derechos reservados &copy; 2025 Agilize Soluciones</p>
     </div>
 </footer>
-
+<script src="js/script.js"></script> 
 </body>
 </html>
