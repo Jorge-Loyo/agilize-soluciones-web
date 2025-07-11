@@ -9,30 +9,28 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Paso 1: Descarga tu código al entorno de GitHub
       - name: Clonar el repositorio
         uses: actions/checkout@v4
 
-      - name: Copiar archivos al servidor por SSH
+      # Paso 2: Copia los archivos de tu web al servidor usando SCP
+      - name: Copiar archivos al servidor
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "./*" # Copia todo desde la raíz de tu proyecto
+          target: "/var/www/html" # Hacia la carpeta de tu web
+          rm: true # Borra el contenido de la carpeta de destino antes de copiar
+
+      # Paso 3 (Opcional, pero buena práctica): Verifica el contenido en el servidor
+      - name: Listar archivos en el servidor para verificar
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo "--- PASO 1: Diagnóstico en el Runner de GitHub ---"
-            echo "El contenido del repositorio que se va a copiar es:"
-            ls -la ${{ github.workspace }}
-
-            echo "--- PASO 2: Limpieza en el Servidor ---"
-            echo "Limpiando el directorio de destino /var/www/html..."
-            sudo rm -rf /var/www/html/*
-
-            echo "--- PASO 3: Copia de Archivos al Servidor ---"
-            echo "Copiando archivos desde el repositorio hacia /var/www/html..."
-            sudo cp -rv ${{ github.workspace }}/* /var/www/html/
-
-            echo "--- PASO 4: Verificación en el Servidor ---"
-            echo "El contenido final de /var/www/html después de copiar es:"
+            echo "El contenido final de /var/www/html es:"
             ls -la /var/www/html
-
-            echo "--- Despliegue completado ---"
