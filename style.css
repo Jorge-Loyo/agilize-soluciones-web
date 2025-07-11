@@ -21,3 +21,10 @@ p {
     font-size: 1.2em;
     color: #CCCCCC; /* Un gris claro para el texto secundario */
 }
+
+/* Para pantallas de menos de 600px de ancho */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2em; /* Un tamaño de letra más pequeño para móviles */
+  }
+}
