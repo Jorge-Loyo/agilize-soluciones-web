@@ -267,3 +267,134 @@ footer {
     margin: 0;
     font-size: 0.9em;
 }
+
+/* --- Estilos para Páginas Internas --- */
+.pagina-interna {
+    padding: 100px 20px 80px 20px; /* Espaciado superior, izq/der, inferior */
+    max-width: 900px;
+    margin: 0 auto; /* Centra el contenedor de contenido */
+    min-height: 70vh; /* Asegura que la página tenga una altura mínima */
+}
+
+.pagina-interna h1 {
+    font-size: 3em;
+    color: #D4AF37; /* Dorado */
+    border-bottom: none; /* Quitamos el borde que tenía el h1 de la portada */
+    padding-bottom: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pagina-interna h2 {
+    font-size: 2.2em;
+    color: #FFFFFF;
+    margin-top: 50px;
+    border-left: 3px solid #D4AF37;
+    padding-left: 15px;
+}
+
+.pagina-interna p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* --- Estilos adicionales para la página de Servicios --- */
+.intro-servicios {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 60px;
+    color: #CCCCCC;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.servicio-detalle {
+    background-color: #1a1a1a;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-left: 4px solid #D4AF37; /* Borde dorado a la izquierda */
+    border-radius: 0 8px 8px 0;
+}
+
+.servicio-detalle h3 {
+    color: #D4AF37;
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+/* --- Estilos para la Página de Contacto --- */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* La columna del form un poco más ancha */
+    gap: 60px;
+    margin-top: 50px;
+    align-items: flex-start;
+}
+
+.info-contacto h3, .contact-form h3 {
+    color: #FFFFFF;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.info-contacto p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.mapa {
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #CCCCCC;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 1em;
+    box-sizing: border-box; /* Importante para que el padding no afecte el ancho */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+
+.boton-principal {
+    width: 100%;
+    padding: 15px;
+    background-color: #D4AF37;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-principal:hover {
+    background-color: #c49d2b;
+}
+
+/* --- Media Query para la página de contacto --- */
+@media (max-width: 768px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
