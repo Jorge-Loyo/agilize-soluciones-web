@@ -9,28 +9,36 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Paso 1: Descarga tu código al entorno de GitHub
       - name: Clonar el repositorio
         uses: actions/checkout@v4
 
-      # Paso 2: Copia los archivos de tu web al servidor usando SCP
-      - name: Copiar archivos al servidor
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "./*" # Copia todo desde la raíz de tu proyecto
-          target: "/var/www/html" # Hacia la carpeta de tu web
-          rm: true # Borra el contenido de la carpeta de destino antes de copiar
-
-      # Paso 3 (Opcional, pero buena práctica): Verifica el contenido en el servidor
-      - name: Listar archivos en el servidor para verificar
+      - name: 1. Limpiar directorio en el servidor (usando SSH)
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo "El contenido final de /var/www/html es:"
+            echo "Borrando contenido antiguo de /var/www/html..."
+            # Usamos sudo directamente, que sabemos que funciona sin contraseña
+            sudo rm -rf /var/www/html/*
+
+      - name: 2. Copiar nuevos archivos al servidor (usando SCP)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "./*"
+          target: "/var/www/html"
+          # NOTA: Hemos quitado la línea 'rm: true' de aquí
+
+      - name: 3. Verificar despliegue en el servidor (usando SSH)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "Verificando el nuevo contenido..."
             ls -la /var/www/html
