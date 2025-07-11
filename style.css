@@ -131,3 +131,77 @@ p {
     height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
     padding: 0 20px;
 }
+
+/* --- Estilos para la sección Portfolio --- */
+.portfolio {
+    padding: 80px 20px;
+    background-color: #000000; /* Volvemos a negro puro para contraste */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.portfolio h2 {
+    font-size: 2.5em;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    position: relative; /* Clave para poder posicionar el texto encima */
+    overflow: hidden; /* Oculta lo que se salga del contenedor */
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Efecto de zoom en la imagen al pasar el ratón */
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(212, 175, 55, 0.9); /* Color dorado semi-transparente */
+    color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Se muestra al pasar el ratón */
+}
+
+.portfolio-overlay h3 {
+    margin: 0;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.portfolio-overlay p {
+    margin: 10px 0 0;
+    font-size: 1em;
+    color: #333;
+    padding: 0 15px;
+}
