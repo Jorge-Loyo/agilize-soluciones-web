@@ -70,3 +70,60 @@ p {
     font-size: 1.5em;
     margin-bottom: 15px;
 }
+
+/* --- Estilos para la sección Quiénes Somos --- */
+.quienes-somos {
+    padding: 80px 20px;
+    background-color: #1a1a1a; /* Alternamos el fondo a gris oscuro para separar secciones */
+    box-sizing: border-box;
+}
+
+.quienes-somos-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 50px; /* Espacio entre el texto y la imagen */
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center; /* Centra verticalmente el contenido de las columnas */
+}
+
+.quienes-somos .texto h2 {
+    font-size: 2.5em;
+    color: #D4AF37; /* Dorado */
+    margin-bottom: 20px;
+}
+
+.quienes-somos .texto p {
+    line-height: 1.7; /* Mayor espaciado entre líneas para mejor legibilidad */
+    margin-bottom: 30px;
+}
+
+.boton-secundario {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.boton-secundario:hover {
+    background-color: #D4AF37;
+    color: #121212;
+}
+
+.quienes-somos .imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* --- Media Query para hacerla responsiva en móviles --- */
+@media (max-width: 768px) {
+    .quienes-somos-contenido {
+        grid-template-columns: 1fr; /* En pantallas pequeñas, una columna encima de la otra */
+        text-align: center;
+    }
+}
