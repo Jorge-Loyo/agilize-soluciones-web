@@ -31,12 +31,7 @@ body {
     align-items: center;
 }
 
-.logo a {
-    color: #D4AF37; /* Color dorado */
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-}
+
 
 .main-nav ul {
     margin: 0;
@@ -473,4 +468,23 @@ footer {
     .contacto-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.logo a {
+    /* Los estilos anteriores para el texto ya no son necesarios aquí */
+    display: block; /* Importante para que la imagen se comporte bien */
+    text-decoration: none;
+}
+
+/* Estilos para la imagen del logo */
+.logo a img {
+    height: 65px; /* <-- Aumentamos la altura de 50px a 65px (puedes ajustar este valor) */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease; /* <-- Añadimos una transición suave */
+}
+
+/* Efecto de zoom al pasar el ratón sobre el logo */
+.logo a img:hover {
+    transform: scale(1.1); /* <-- Aumenta el tamaño de la imagen un 10% */
 }
