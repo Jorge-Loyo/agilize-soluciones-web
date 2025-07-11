@@ -28,3 +28,45 @@ p {
     font-size: 2.2em; /* Un tamaño de letra más pequeño para móviles */
   }
 }
+
+/* --- Estilos para la sección de Servicios --- */
+.servicios {
+    width: 100%;
+    padding: 80px 20px; /* Espaciado interno para que no se pegue a los bordes */
+    background-color: #000000; /* Fondo negro para separar del hero */
+    text-align: center;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.servicios h2 {
+    font-size: 2.5em;
+    color: #FFFFFF;
+    margin-bottom: 50px; /* Espacio debajo del título "Lo que Ofrecemos" */
+}
+
+.servicios-grid {
+    display: grid;
+    /* Crea columnas flexibles que se adaptan al tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Espacio entre las tarjetas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el grid en la página */
+}
+
+.servicio-card {
+    background-color: #1a1a1a; /* Un gris muy oscuro para las tarjetas */
+    padding: 35px 25px;
+    border-left: 3px solid transparent; /* Borde dorado que aparecerá al pasar el ratón */
+    transition: all 0.3s ease; /* Transición suave para los efectos */
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta al pasar el ratón */
+    border-left: 3px solid #D4AF37; /* Muestra el borde dorado */
+}
+
+.servicio-card h3 {
+    color: #D4AF37; /* Título de la tarjeta en dorado */
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
