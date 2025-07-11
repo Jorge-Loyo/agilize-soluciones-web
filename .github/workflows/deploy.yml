@@ -19,8 +19,8 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/html
-            sudo rm -rf ./*
-            echo "Copiando archivos del sitio..."
-            sudo cp -r ${{ github.workspace }}/* .
+            echo "Limpiando directorio de destino..."
+            sudo rm -rf /var/www/html/*
+            echo "Copiando archivos del nuevo sitio..."
+            sudo cp -rT ${{ github.workspace }} /var/www/html
             echo "Despliegue completado."
