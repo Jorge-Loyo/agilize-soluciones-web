@@ -19,8 +19,20 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo "Limpiando directorio de destino..."
+            echo "--- PASO 1: Diagnóstico en el Runner de GitHub ---"
+            echo "El contenido del repositorio que se va a copiar es:"
+            ls -la ${{ github.workspace }}
+
+            echo "--- PASO 2: Limpieza en el Servidor ---"
+            echo "Limpiando el directorio de destino /var/www/html..."
             sudo rm -rf /var/www/html/*
-            echo "Copiando archivos del nuevo sitio..."
-            sudo cp -rT ${{ github.workspace }} /var/www/html
-            echo "Despliegue completado."
+
+            echo "--- PASO 3: Copia de Archivos al Servidor ---"
+            echo "Copiando archivos desde el repositorio hacia /var/www/html..."
+            sudo cp -rv ${{ github.workspace }}/* /var/www/html/
+
+            echo "--- PASO 4: Verificación en el Servidor ---"
+            echo "El contenido final de /var/www/html después de copiar es:"
+            ls -la /var/www/html
+
+            echo "--- Despliegue completado ---"
